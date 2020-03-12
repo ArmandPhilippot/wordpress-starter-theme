@@ -1,0 +1,76 @@
+//==============================================================================
+// Theme Information
+//==============================================================================
+$theme_name: 'WordPressStarterTheme';
+$theme_uri: 'https://github.com/ArmandPhilippot/wordpress-starter-theme';
+$theme_description: 'A WordPress Starter Theme.';
+$theme_version: '1.0.0';
+$theme_author: 'Armand Philippot';
+$theme_author-uri: 'https://www.armandphilippot.com/';
+$theme_license: 'GNU General Public License v2 or later';
+$theme_license-uri: 'http://www.gnu.org/licenses/gpl-2.0.html';
+$theme_domain: 'WordPressStarterTheme';
+$theme_domain-path: '/languages/';
+$theme_tags: 'responsive-layout, custom-menu, editor-style, translation-ready';
+
+//=============================================================================
+// Containers
+//=============================================================================
+
+//=============================================================================
+// Fonts
+//=============================================================================
+$font_body: (Arial, 'Liberation Sans', sans-serif);
+$font_mono: ('Courier New', Courier, monospace);
+
+$font_size-base: 16px;
+$font_size-base-rem: 1rem;
+$font_size-ratio: 1.125;
+
+$font_size-xxs: 1rem / (1.5 * $font_size-ratio);
+$font_size-xs: 1rem / (1.25 * $font_size-ratio);
+$font_size-sm: 1rem / (1.125 * $font_size-ratio);
+$font_size-md: 1rem * (1 * $font_size-ratio);
+$font_size-lg: 1rem * (1.25 * $font_size-ratio);
+$font_size-xl: 1rem * (1.5 * $font_size-ratio);
+$font_size-xxl: 1rem * (1.75 * $font_size-ratio);
+$font_size-xxxl: 1rem * (2 * $font_size-ratio);
+
+//==============================================================================
+// Spacing : padding, margin...
+//==============================================================================
+$spacing_initial: 1;
+$spacing_golden-number: 1.618;
+
+// Spacing sizes
+$spacing_size-xxs: $spacing_golden-number / 4 * 1rem;
+$spacing_size-xs: $spacing_golden-number / 3 * 1rem;
+$spacing_size-sm: $spacing_golden-number / 2 * 1rem;
+$spacing_size-md: $spacing_golden-number * 1rem;
+$spacing_size-lg: $spacing_golden-number * 1.5 * 1rem;
+$spacing_size-xl: $spacing_golden-number * 2 * 1rem;
+$spacing_size-xxl: $spacing_golden-number * 2.5 * 1rem;
+
+//==============================================================================
+// Colors
+//==============================================================================
+$color_white: #fff;
+$color_black: #000;
+
+//==============================================================================
+// Variables assignation
+//==============================================================================
+// Primary colors
+$primary-color: $color_black;
+$primary-color-light: lighten($primary-color, 5%);
+$primary-color-lighter: lighten($primary-color, 10%);
+$primary-color-dark: darken($primary-color, 5%);
+$primary-color-darker: darken($primary-color, 10%);
+
+// Line height
+$line-height: $spacing_golden-number;
+$line-height-pre: $spacing_initial;
+
+// Body
+$body-background: $color_white;
+$body-text-color: $color_black;

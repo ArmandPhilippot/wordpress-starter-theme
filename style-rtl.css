@@ -1,0 +1,552 @@
+/*!
+Theme Name: WordPressStarterTheme
+Theme URI: https://github.com/ArmandPhilippot/wordpress-starter-theme
+Description: A WordPress Starter Theme.
+Version: 1.0.0
+Author: Armand Philippot
+Author URI: https://www.armandphilippot.com/
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: WordPressStarterTheme
+Domain Path: /languages/
+Tags: responsive-layout, custom-menu, editor-style, translation-ready
+*/
+/*!============================================================================
+>>> TABLE OF CONTENTS:
+===============================================================================
+1. Normalize CSS
+2. Helpers
+	2.1. Accessibility
+	2.2. Alignments
+	2.3. Clearings
+3. Common Elements
+	3.1. Typography
+	3.2. Elements
+4. Layout
+	4.1. Structure
+	4.2. Templates
+5. Modules
+	5.1. Main navigation
+	5.2. Pagination & Posts navigation
+	5.3. Comments
+	5.4. Forms
+	5.5. Gallery
+	5.6. Widgets
+	5.7. Gutenberg blocks
+=============================================================================*/
+/*=============================================================================
+1. Normalize CSS
+Resetting and rebuilding styles have been helped along thanks to the fine work
+of Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+=============================================================================*/
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+		line-height: 1.15;
+		/* 1 */
+		-webkit-text-size-adjust: 100%;
+		/* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+		margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+main {
+		display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+		font-size: 2em;
+		margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+		-webkit-box-sizing: content-box;
+		        box-sizing: content-box;
+		/* 1 */
+		height: 0;
+		/* 1 */
+		overflow: visible;
+		/* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+		font-family: monospace, monospace;
+		/* 1 */
+		font-size: 1em;
+		/* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+		background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+		border-bottom: none;
+		/* 1 */
+		text-decoration: underline;
+		/* 2 */
+		-webkit-text-decoration: underline dotted;
+		        text-decoration: underline dotted;
+		/* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+		font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+		font-family: monospace, monospace;
+		/* 1 */
+		font-size: 1em;
+		/* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+		font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+		font-size: 75%;
+		line-height: 0;
+		position: relative;
+		vertical-align: baseline;
+}
+
+sub {
+		bottom: -0.25em;
+}
+
+sup {
+		top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+		border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+		font-family: inherit;
+		/* 1 */
+		font-size: 100%;
+		/* 1 */
+		line-height: 1.15;
+		/* 1 */
+		margin: 0;
+		/* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+		/* 1 */
+		overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+		/* 1 */
+		text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+		-webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner {
+		border-style: none;
+		padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type='button']:-moz-focusring,
+[type='reset']:-moz-focusring,
+[type='submit']:-moz-focusring {
+		outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+		padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+		-webkit-box-sizing: border-box;
+		        box-sizing: border-box;
+		/* 1 */
+		color: inherit;
+		/* 2 */
+		display: table;
+		/* 1 */
+		max-width: 100%;
+		/* 1 */
+		padding: 0;
+		/* 3 */
+		white-space: normal;
+		/* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+		vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+		overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type='checkbox'],
+[type='radio'] {
+		-webkit-box-sizing: border-box;
+		        box-sizing: border-box;
+		/* 1 */
+		padding: 0;
+		/* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type='number']::-webkit-inner-spin-button,
+[type='number']::-webkit-outer-spin-button {
+		height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type='search'] {
+		-webkit-appearance: textfield;
+		/* 1 */
+		outline-offset: -2px;
+		/* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type='search']::-webkit-search-decoration {
+		-webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+		-webkit-appearance: button;
+		/* 1 */
+		font: inherit;
+		/* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+		display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+		display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10+.
+ */
+template {
+		display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+		display: none;
+}
+
+/*=============================================================================
+2. Helpers
+=============================================================================*/
+/*=============================================================================
+2.1. Accessibility
+=============================================================================*/
+/* Text meant only for screen readers. */
+.says,
+.screen-reader-text {
+		border: 0;
+		clip: rect(1px 1px 1px 1px);
+		/* IE6, IE7 */
+		clip: rect(1px, 1px, 1px, 1px);
+		height: 0.0625rem;
+		overflow: hidden;
+		padding: 0;
+		position: absolute !important;
+		width: 0.0625rem;
+		word-break: normal;
+		word-wrap: normal !important;
+		/* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+		background: #000;
+		border-radius: 0.1875rem;
+		-webkit-box-shadow: 0 0 0.125rem 0.125rem rgba(0, 0, 0, 0.6);
+		        box-shadow: 0 0 0.125rem 0.125rem rgba(0, 0, 0, 0.6);
+		clip: auto !important;
+		color: #fff;
+		display: block;
+		font-size: 1.125rem;
+		font-weight: 700;
+		height: auto;
+		right: 0.3125rem;
+		padding: 0.875rem 1.4375rem;
+		top: 0.4375rem;
+		width: auto;
+		z-index: 100000;
+		/* Above WP toolbar. */
+}
+
+/*=============================================================================
+2.2. Alignments
+=============================================================================*/
+.alignleft {
+		float: left;
+		margin-right: 1.618rem;
+		max-width: 50%;
+}
+
+.alignright {
+		float: right;
+		margin-left: 1.618rem;
+		max-width: 50%;
+}
+
+.aligncenter {
+		clear: both;
+		display: block;
+		margin-right: auto;
+		margin-left: auto;
+		text-align: center;
+}
+
+.alignfull {
+		margin-right: auto;
+		margin-left: auto;
+		max-width: 100vw;
+		position: relative;
+		width: 100%;
+}
+
+.alignwide {
+		position: relative;
+		width: 100%;
+}
+
+/*=============================================================================
+2.3. Clearings
+=============================================================================*/
+.clear {
+		*zoom: 1;
+}
+
+.clear::before, .clear::after {
+		content: ' ';
+		display: table;
+}
+
+.clear::after {
+		clear: both;
+}
+
+/*=============================================================================
+3. Common Elements
+=============================================================================*/
+/**
+ * Set up a decent box model on the root element
+ */
+html {
+		-webkit-box-sizing: border-box;
+		        box-sizing: border-box;
+}
+
+/**
+ * Make all elements from the DOM inherit from the parent box-sizing
+ * Since `*` has a specificity of 0, it does not override the `html` value
+ * making all elements inheriting from the root box-sizing value.
+ */
+*,
+*:after,
+*:before {
+		-webkit-box-sizing: inherit;
+		        box-sizing: inherit;
+}
+
+body {
+		background: #fff;
+		color: #000;
+		font-family: Arial, "Liberation Sans", sans-serif;
+		font-size: 16px;
+		font-size: 1rem;
+		line-height: 1.618;
+}
+
+/*=============================================================================
+3.1. Typography
+=============================================================================*/
+/*=============================================================================
+3.2. Elements
+=============================================================================*/
+/*=============================================================================
+4. Layout
+=============================================================================*/
+/*=============================================================================
+4.1. Structure
+=============================================================================*/
+/*=============================================================================
+4.2. Templates
+=============================================================================*/
+/*=============================================================================
+5. Modules
+=============================================================================*/
+/*=============================================================================
+5.1. Main navigation
+=============================================================================*/
+/*=============================================================================
+5.2. Pagination & Posts navigation
+=============================================================================*/
+/*=============================================================================
+5.3. Comments
+=============================================================================*/
+/*=============================================================================
+5.4. Forms
+=============================================================================*/
+/*=============================================================================
+5.5. Gallery
+=============================================================================*/
+/*=============================================================================
+5.6. Widgets
+=============================================================================*/
+/*=============================================================================
+5.7. Gutenberg blocks
+=============================================================================*/
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImJhc2UvX3RoZW1lX2luZm8uc2NzcyIsInN0eWxlLnNjc3MiLCJiYXNlL19ub3JtYWxpemUuc2NzcyIsInN0eWxlLmNzcyIsImhlbHBlcnMvX2FjY2Vzc2liaWxpdHkuc2NzcyIsImhlbHBlcnMvX2Z1bmN0aW9ucy5zY3NzIiwiaGVscGVycy9fdmFyaWFibGVzLnNjc3MiLCJoZWxwZXJzL19hbGlnbm1lbnRzLnNjc3MiLCJoZWxwZXJzL19jbGVhcmluZ3Muc2NzcyIsImhlbHBlcnMvX21peGlucy5zY3NzIiwiYmFzZS9fYmFzZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7Ozs7Ozs7RUFZRTtBQ0NGOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OytFQXNCK0U7QUFFL0U7Ozs7K0VBSStFO0FDekMvRSw0RUFBNEU7QUFFNUU7Z0ZBQ2dGO0FBRWhGOzs7R0FHRztBQUVIO0VBQ0Msa0JBQWlCO0VBQUUsT0FBTztFQUMxQiwrQkFBOEI7RUFBRSxPQUFPO0NBQ3ZDOztBQUVEO2dGQUNnRjtBQUVoRjs7R0FFRztBQUVIO0VBQ0MsVUFBUztDQUNUOztBQUVEOztHQUVHO0FBRUg7RUFDQyxlQUFjO0NBQ2Q7O0FBRUQ7OztHQUdHO0FBRUg7RUFDQyxlQUFjO0VBQ2QsaUJBQWdCO0NBQ2hCOztBQUVEO2dGQUNnRjtBQUVoRjs7O0dBR0c7QUFFSDtFQUNDLGdDQUF1QjtVQUFTLHdCQUFBO0VBQ2hDLE9BQU07RUFBSyxVQUFPO0VBQ2xCLE9BQUE7RUFBbUIsa0JBQU87RUFDMUIsT0FBQTtDQ3NDQTs7QUFFRDs7O0dEakNHO0FDcUNIO0VEcENvQyxrQ0FBTztFQUMxQyxPQUFBO0VBQWdCLGVBQU87RUFDdkIsT0FBQTtDQ3VDQTs7QUFFRDtnRkRwQ0E7QUNzQ0E7O0dEbENFO0FDcUNGO0VEbkNDLDhCQUFBO0NDcUNBOztBQUVEOzs7R0RoQ0E7QUNvQ0E7RURuQ3NCLG9CQUFPO0VBQzVCLE9BQUE7RUFBNEIsMkJBQU87RUFDbkMsT0FBQTtFQUFtQywwQ0FBTztVQUMxQyxrQ0FBQTtFQ3VDQyxPQUFPO0NEckNUOztBQ3dDQTs7R0RuQ0E7QUNzQ0E7O0VBRUUsb0JBQW9CO0NEcEN0Qjs7QUN1Q0E7OztHRGpDRztBQUNIOzs7RUFFQyxrQ0FBYztFQUFFLE9BQU87RUFDdkIsZUFBQTtFQ3VDQyxPQUFPO0NEckNUOztBQ3dDQTs7R0RuQ0M7QUNzQ0Q7RUFDRSxlQUFlO0NEcENqQjs7QUN1Q0E7OztHRGpDRztBQ3FDSDs7RURsQ0MsZUFBVTtFQUNWLGVBQWM7RUFDZCxtQkFBQTtFQ3FDQyx5QkFBeUI7Q0RuQzNCOztBQ3NDQTtFQUNFLGdCQUFnQjtDRG5DbEI7O0FDc0NBO0VBQ0UsWUFBWTtDRG5DZDs7QUFHQTtnRkNvQ2dGO0FBQ2hGOztHRGhDQztBQ21DRDtFQUNFLG1CQUFtQjtDRGpDckI7O0FBR0E7Z0ZDa0NnRjtBQUNoRjs7O0dEN0JBO0FBQ0E7Ozs7O0VBSUMscUJBQWU7RUFBRSxPQUFPO0VBQ3hCLGdCQUFhO0VBQU0sT0FBTztFQUMxQixrQkFBUztFQUFFLE9BQU87RUFDbEIsVUFBQTtFQ3FDQyxPQUFPO0NEbkNUOztBQ3NDQTs7O0dEaENBO0FDb0NBOztFRGpDQyxPQUFBO0VDb0NDLGtCQUFrQjtDRGxDcEI7O0FDcUNBOzs7R0QvQkE7QUNtQ0E7O0VEaENDLE9BQUE7RUNtQ0MscUJBQXFCO0NEakN2Qjs7QUNvQ0E7O0dEL0JBO0FDa0NBOzs7O0VBSUUsMkJBQTJCO0NEaEM3Qjs7QUNtQ0E7O0dEOUJBO0FDaUNBOzs7O0VENUJDLG1CQUFBO0VDaUNDLFdBQVc7Q0QvQmI7O0FDa0NBOztHRDdCQTtBQ2dDQTs7OztFQUlFLCtCQUErQjtDRDlCakM7O0FDaUNBOztHRDVCQztBQytCRDtFQUNFLCtCQUErQjtDRDdCakM7O0FDZ0NBOzs7OztHRHhCQztBQzhCRDtFRDdCQywrQkFBYztVQUFTLHVCQUFBO0VBQ3ZCLE9BQU87RUFBUyxlQUFPO0VBQ3ZCLE9BQUE7RUFBaUIsZUFBTztFQUN4QixPQUFPO0VBQUssZ0JBQU87RUFDbkIsT0FBQTtFQUFxQixXQUFPO0VBQzVCLE9BQUE7RUNvQ0Msb0JBQW9CO0VEbEN0QixPQUFBO0NDb0NDOztBRGhDRDs7R0FFQztBQ21DRDtFRGpDQSx5QkFBQTtDQ21DQzs7QUQvQkQ7O0dBRUM7QUNrQ0Q7RURoQ0EsZUFBQTtDQ2tDQzs7QUFFRDs7O0dEN0JDO0FDaUNEOztFRGhDYSwrQkFBTztVQUNuQix1QkFBQTtFQ21DQyxPQUFPO0VEakNULFdBQUE7RUNtQ0UsT0FBTztDQUNSOztBQUVEOztHRC9CQztBQ2tDRDs7RUFFRSxhQUFhO0NBQ2Q7O0FBRUQ7OztHRDlCQztBQ2tDRDtFRGpDQyw4QkFBQTtFQ21DQyxPQUFPO0VEakNULHFCQUFBO0VDbUNFLE9BQU87Q0FDUjs7QUFFRDs7R0FFRztBRGhDSDtFQ2tDRSx5QkFBeUI7Q0FDMUI7O0FEOUJEOzs7R0FFQztBQ2tDRDtFRGpDQywyQkFBQTtFQ21DQyxPQUFPO0VEakNULGNBQUE7RUNtQ0UsT0FBTztDRGhDVDs7QUNtQ0E7Z0ZEL0JRO0FDaUNSOztHQUVHO0FEL0JIO0VDaUNFLGVBQWU7Q0FDaEI7O0FBRUQ7O0dBRUc7QUQ5Qkg7RUNnQ0UsbUJBQW1CO0NEN0JyQjs7QUNnQ0E7Z0ZENUJTO0FDOEJUOztHQUVHO0FENUJIO0VDOEJFLGNBQWM7Q0FDZjs7QUFFRDs7R0FFRztBRi9VSDtFRWlWRSxjQUFjO0NBQ2Y7O0FBRUQ7OytFQ2hZeUM7QUFDekM7OytFQUVVO0FEbVlWLHlDQ2xZNEI7QURtWTVCOztFQ2hZQyxVQ1NRO0VEUlIsNEJBQWdCO0VBQ2hCLGNBQVU7RUFDViwrQkFBNkI7RUFDN0Isa0JDSzRCO0VESjVCLGlCQUFZO0VBQ1osV0FBVztFQUNYLDhCQUFBO0VBQ0EsaUJBQUE7RURtWUMsbUJBQW1CO0VDallyQiw2QkFBMEI7RUFDekIsc0dFdUNpQjtDSDRWakI7O0FBRUQ7RUNqWUMsaUJFa0NpQjtFRmpDakIseUJBQWM7RUFDZCw2RENSNEI7VURTNUIscURBQWdCO0VBQ2hCLHNCQUFZO0VBQ1osWUNYUTtFRFlSLGVDWlE7RURhUixvQkNiNEI7RURjNUIsaUJBQVc7RUFDWCxhQUFTO0VBQ1QsaUJBQUE7RUFDQSw0QkFBQTtFRG1ZQyxlQUFlO0VGL1dqQixZQUFBO0VFaVhFLGdCQUFnQjtFQUNoQix1QkFBdUI7Q0l2YXpCOztBSjBhQTs7K0VHMVgrQztBSDZYL0M7RUFFRSxZQUFZO0VJdGFiLHVCQUFjO0VBQ2QsZUFBWTtDSnlhWjs7QUFFRDtFQUVFLGFBQWE7RUl0YWQsc0JBQVc7RUFDWCxlQUFZO0NKeWFaOztBQUVEO0VJemFDLFlBQUE7RUoyYUMsZUFBZTtFSXphakIsbUJBQVc7RUFDVixrQkFBa0I7RUFDbEIsbUJBQWlCO0NKMmFqQjs7QUFFRDtFSXphQyxtQkFBQTtFSjJhQyxrQkFBbUI7RUl6YXJCLGlCQUFXO0VBQ1YsbUJBQWtCO0VBQ2xCLFlBQVc7Q0FDWDs7QU55QkQ7RUVvWkUsbUJBQW1CO0VBQ25CLFlBQVk7Q0svY2Q7O0FMa2RBOzsrRU05Y1U7QU5pZFY7R00vY0UsUUFBUztDQUNUOztBQUNEO0VBQ0MsYUFBVztFQUNYLGVBQUE7Q05rZEQ7O0FBRUQ7RUFDRSxZQUFZO0NPL2RkOztBUGtlQTs7K0VPOWR1QjtBUGlldkI7O0dPOWRBO0FQaWVBO0VBQ0UsK0JBQStCO1VBQ3ZCLHVCQUF1QjtDQUNoQzs7QU85ZEQ7Ozs7R1BvZUc7QU8vZEg7OztFQUdDLDRCSkNtQjtVSUFuQixvQkpHb0I7Q0g4ZHBCOztBQUVEO0VBQ0UsaUJBQWlCO0VGdGJuQixZQUFBO0VFd2JFLGtEQUFrRDtFQUNsRCxnQkFBZ0I7RUZuYmxCLGdCQUFBO0VFcWJFLG1CQUFtQjtDQUNwQjs7QUFFRDs7K0VGeGFBO0FFMmFBOzsrRUZuYUE7QUVzYUE7OytFRjlaQTtBRWlhQTs7K0VGN1pBO0FFZ2FBOzsrRUYzWkE7QUU4WkE7OytFRnhaQTtBRTJaQTs7K0VGdFpBO0FFeVpBOzsrRUZwWkE7QUV1WkE7OytFRmxaQTtBRXFaQTs7K0VGaFpBO0FFbVpBOzsrRUFFK0U7QUFDL0U7OytFQUUrRTtBQUMvRTs7K0VBRStFIiwiZmlsZSI6InRvLmNzcyJ9 */
+/*# sourceMappingURL=style-rtl.css.map */

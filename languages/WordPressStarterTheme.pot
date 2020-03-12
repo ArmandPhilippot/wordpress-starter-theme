@@ -1,0 +1,114 @@
+# Copyright (C) 2020 WordPress-Starter-Theme
+# This file is distributed under the same license as the WordPress-Starter-Theme package.
+msgid ""
+msgstr ""
+"Project-Id-Version: WordPress-Starter-Theme\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language-Team: WordPressStarterTheme Team <contact@armandphilippot.com>\n"
+"Last-Translator: Armand Philippot <contact@armandphilippot.com>\n"
+"Report-Msgid-Bugs-To: https://github.com/ArmandPhilippot/wordpress-starter-theme/issues\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: archive.php:20, author.php:20, category.php:20, comments.php:39, date.php:20, index.php:25, search.php:20, tag.php:20
+msgid "Previous"
+msgstr ""
+
+#: archive.php:21, author.php:21, category.php:21, comments.php:40, date.php:21, index.php:26, search.php:21, tag.php:21
+msgid "Next"
+msgstr ""
+
+#: comments.php:30
+msgid "Reply"
+msgstr ""
+
+#: functions.php:76
+msgid "Small"
+msgstr ""
+
+#: functions.php:77
+msgid "S"
+msgstr ""
+
+#: functions.php:82
+msgid "Normal"
+msgstr ""
+
+#: functions.php:83
+msgid "M"
+msgstr ""
+
+#: functions.php:88
+msgid "Large"
+msgstr ""
+
+#: functions.php:89
+msgid "L"
+msgstr ""
+
+#: functions.php:94
+msgid "Huge"
+msgstr ""
+
+#: functions.php:95
+msgid "XL"
+msgstr ""
+
+#: functions.php:108, template-parts/header/navigation-top.php:10
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:124
+msgid "Sidebar"
+msgstr ""
+
+#: functions.php:126
+msgid "Add widgets here to appear in your sidebar."
+msgstr ""
+
+#: header.php:21
+msgid "Skip to content"
+msgstr ""
+
+#: search.php:27
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr ""
+
+#: searchform.php:22
+msgid "Search for:"
+msgstr ""
+
+#: searchform.php:23
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr ""
+
+#: searchform.php:25
+msgctxt "submit button"
+msgid "Search"
+msgstr ""
+
+#. translators: Copyright date format, see https://secure.php.net/date
+#: template-parts/footer/credits.php:19
+msgctxt "copyright date format"
+msgid "Y"
+msgstr ""
+
+#: template-parts/post/content-none.php:16
+msgid "Nothing Found"
+msgstr ""
+
+#. translators: %1$s: URL to publish post.
+#: template-parts/post/content-none.php:25
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/post/content-none.php:31
+msgid "It seems we can't find what you're looking for. Perhaps searching can help."
+msgstr ""

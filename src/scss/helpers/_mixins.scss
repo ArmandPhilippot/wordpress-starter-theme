@@ -1,0 +1,71 @@
+/// Set up clearfix
+@mixin clearfix {
+	*zoom: 1;
+	&::before,
+	&::after {
+		content: ' ';
+		display: table;
+	}
+	&::after {
+		clear: both;
+	}
+}
+
+/// Center block
+@mixin center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/// Media Queries
+/// @param {String} $media-type [all] - Target media type. Either `all`, `screen`, `print`, 'speech' or 'retina'.
+/// @param {Number} $min-width [null] - Min Width with unit
+/// @param {Number} $max-width [null] - Max Width with unit
+/// @param {String} $hover [null] - Target or not touch devices
+@mixin mediaq(
+	$media-type: all,
+	$min-width: null,
+	$max-width: null,
+	$hover: null
+) {
+	$query: '';
+	$type: '';
+	@if $media-type == screen {
+		$type: 'only screen';
+	} @else if $media-type == print {
+		$type: 'only print';
+	} @else if $media-type == handled {
+		$type: 'only handheld';
+	} @else if $media-type == retina {
+		$type: '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)';
+	} @else {
+		$type: 'all';
+	}
+	$query: $query + $type;
+	@if $min-width != null {
+		@if is-number($min-width) and unit($min-width) != '' {
+			$query: $query + ' and (min-width: #{$min-width})';
+		} @else {
+			@error "Property #{$min-width} must be a number with unit.";
+		}
+	}
+	@if $max-width != null {
+		@if is-number($max-width) and unit($max-width) != '' {
+			$query: $query + ' and (max-width: #{$max-width})';
+		} @else {
+			@error "Property #{$max-width} must be a number with unit.";
+		}
+	}
+	@if $hover == hover {
+		$query: $query + ' and (hover: #{$hover})';
+	} @else if $hover == none {
+		$query: $query + ' and (hover: #{$hover})';
+	}
+	@if $min-width == null and $max-width == null and $hover == null {
+		@error "You must indicate #{$min-width}, #{$max-width} or #{$hover}";
+	}
+	@media #{$query} {
+		@content;
+	}
+}

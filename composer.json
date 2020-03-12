@@ -1,0 +1,54 @@
+{
+	"name": "armandphilippot/wordpress-starter-theme",
+	"description": "A WordPress Starter Theme.",
+	"keywords": [
+		"WordPress",
+		"theme"
+	],
+	"license": "GPL-2.0-or-later",
+	"homepage": "https://github.com/ArmandPhilippot/wordpress-starter-theme",
+	"authors": [
+		{
+			"name": "Armand Philippot",
+			"homepage": "https://www.armandphilippot.com/",
+			"email": "contact@armandphilippot.com"
+		}
+	],
+	"type": "wordpress-theme",
+	"support": {
+		"issues": "https://github.com/ArmandPhilippot/wordpress-starter-theme/issues",
+		"source": "https://github.com/ArmandPhilippot/wordpress-starter-theme"
+	},
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "https://asset-packagist.org"
+		}
+	],
+	"require": {
+		"composer/installers": "~1.0",
+		"oomphinc/composer-installers-extender": "^1.1",
+		"npm-asset/html5shiv": "^3.7"
+	},
+	"require-dev": {
+		"squizlabs/php_codesniffer": "^3.5",
+		"wp-coding-standards/wpcs": "^2.2",
+		"dealerdirect/phpcodesniffer-composer-installer": "^0.6.2"
+	},
+	"scripts": {
+		"wplint": "phpcs --standard=WordPress",
+		"wpfix": "phpcbf --standard=WordPress"
+	},
+	"extra": {
+		"installer-types": [
+			"bower-asset",
+			"npm-asset",
+			"library"
+		],
+		"installer-paths": {
+			"assets/js/{$name}/": [
+				"npm-asset/html5shiv"
+			]
+		}
+	}
+}
