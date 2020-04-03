@@ -106,7 +106,7 @@ msgctxt "placeholder"
 msgid "Search &hellip;"
 msgstr ""
 
-#: searchform.php:25
+#: searchform.php:26
 msgctxt "submit button"
 msgid "Search"
 msgstr ""

@@ -22,5 +22,7 @@ $wordpressstartertheme_aria_label = ! empty( $args['label'] ) ? 'aria-label="' .
 		<span class="screen-reader-text"><?php esc_html_e( 'Search for:', 'WordPressStarterTheme' ); ?></span>
 		<input type="search" id="<?php echo esc_attr( $wordpressstartertheme_unique_id ); ?>" class="search-field" placeholder="<?php echo esc_attr_x( 'Search &hellip;', 'placeholder', 'WordPressStarterTheme' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
 	</label>
-	<input type="submit" class="search-submit" value="<?php echo esc_attr_x( 'Search', 'submit button', 'WordPressStarterTheme' ); ?>" />
+	<button type="submit" class="search-submit">
+		<span><?php echo esc_html_x( 'Search', 'submit button', 'WordPressStarterTheme' ); ?></span>
+	</button>
 </form>
