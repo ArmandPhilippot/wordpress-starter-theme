@@ -10,6 +10,17 @@ get_header(); ?>
 <main id="main" class="site-main content-area">
 	<?php
 	if ( have_posts() ) {
+		?>
+		<header class="page-header">
+			<?php
+			$wordpressstartertheme_current_tag = single_tag_title( '', false );
+			echo '<h1 class="page-title">' . esc_html( $wordpressstartertheme_current_tag ) . '</h1>';
+			if ( tag_description() ) {
+				echo '<div class="taxonomy-description">' . wp_kses_post( tag_description() ) . '</div>';
+			}
+			?>
+		</header><!-- .page-header -->
+		<?php
 		while ( have_posts() ) {
 			the_post();
 			get_template_part( 'template-parts/post/content', get_post_format() );

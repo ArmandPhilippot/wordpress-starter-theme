@@ -15,6 +15,17 @@ get_header(); ?>
 <main id="main" class="site-main content-area">
 	<?php
 	if ( have_posts() ) {
+		?>
+		<header class="page-header">
+			<?php if ( is_home() && ! is_front_page() ) { ?>
+				<h1 class="page-title"><?php single_post_title(); ?>
+				</h1>
+			<?php } else { ?>
+				<h2 class="page-title"><?php esc_html_e( 'Posts', 'WordPressStarterTheme' ); ?>
+				</h2>
+			<?php } ?>
+		</header><!-- .page-header -->
+		<?php
 		while ( have_posts() ) {
 			the_post();
 			get_template_part( 'template-parts/post/content', get_post_format() );

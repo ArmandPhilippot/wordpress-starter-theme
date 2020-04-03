@@ -16,12 +16,16 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: archive.php:20, author.php:20, category.php:20, comments.php:39, date.php:20, index.php:25, search.php:20, tag.php:20
+#: archive.php:28, author.php:36, category.php:31, comments.php:39, date.php:28, index.php:36, search.php:33, tag.php:31
 msgid "Previous"
 msgstr ""
 
-#: archive.php:21, author.php:21, category.php:21, comments.php:40, date.php:21, index.php:26, search.php:21, tag.php:21
+#: archive.php:29, author.php:37, category.php:32, comments.php:40, date.php:29, index.php:37, search.php:34, tag.php:32
 msgid "Next"
+msgstr ""
+
+#: author.php:22
+msgid "Website:"
 msgstr ""
 
 #: comments.php:30
@@ -76,7 +80,20 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: search.php:27
+#: index.php:24
+msgid "Posts"
+msgstr ""
+
+#. translators: %s: search query.
+#: search.php:16
+msgid "Search Results for: %s"
+msgstr ""
+
+#: search.php:20, template-parts/post/content-none.php:16
+msgid "Nothing Found"
+msgstr ""
+
+#: search.php:40
 msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
 msgstr ""
 
@@ -98,10 +115,6 @@ msgstr ""
 #: template-parts/footer/credits.php:19
 msgctxt "copyright date format"
 msgid "Y"
-msgstr ""
-
-#: template-parts/post/content-none.php:16
-msgid "Nothing Found"
 msgstr ""
 
 #. translators: %1$s: URL to publish post.
