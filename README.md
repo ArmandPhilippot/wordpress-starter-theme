@@ -44,6 +44,11 @@ Finally, you can start creating your theme !
 
 ## Changelog
 
+| Version | Date       | Notes                                                                      |
+| ------- | ---------- | -------------------------------------------------------------------------- |
+| v1.1.0  | 2020-04-03 | Add some headings, taxonomy description & replace input markup with button |
+| v1.0.0  | 2020-03-12 | Stable version                                                             |
+
 ### 1.0
 
 -   Stable version
