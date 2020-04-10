@@ -19,7 +19,7 @@
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'WORDPRESSSTARTERTHEME_VERSION', '1.1.0' );
+define( 'WORDPRESSSTARTERTHEME_VERSION', '1.1.1' );
 
 if ( ! function_exists( 'wordpressstartertheme_setup' ) ) {
 	/**
