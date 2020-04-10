@@ -82,7 +82,7 @@ module.exports = {
 	},
 	// Del config
 	cleanConfig: [
-		'./languages',
+		'./languages/WordPressStarterTheme.pot',
 		'./assets/**/*',
 		'!./assets',
 		'!./assets/js/html5shiv/**/*',
