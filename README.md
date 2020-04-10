@@ -46,6 +46,7 @@ Finally, you can start creating your theme !
 
 | Version | Date       | Notes                                                                      |
 | ------- | ---------- | -------------------------------------------------------------------------- |
+| v.1.1.1 | 2020-04-10 | Add missing Gutenberg block files, update Gulp clean config                |
 | v1.1.0  | 2020-04-03 | Add some headings, taxonomy description & replace input markup with button |
 | v1.0.0  | 2020-03-12 | Stable version                                                             |
 
