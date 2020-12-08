@@ -1,5 +1,7 @@
 # WordPress-Starter-Theme
 
+**[NO LONGER MAINTAINED] Check [WordPress boilerplate](https://github.com/ArmandPhilippot/wordpress-boilerplate) instead.**
+
 A WordPress Starter Theme.
 
 ## Introduction
